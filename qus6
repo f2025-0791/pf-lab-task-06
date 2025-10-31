@@ -1,0 +1,65 @@
+#if else if code here
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    int choice;
+    double time, distance;
+    const double CARBON_DIOXIDE = 258.0;
+    const double AIR = 331.5;
+    const double HELIUM = 972.0;
+    const double HYDROGEN = 1270.0;
+
+    cout << "Speed of Sound Distance Calculator\n";
+    cout << "----------------------------------\n";
+    cout << "1. Carbon Dioxide\n";
+    cout << "2. Air\n";
+    cout << "3. Helium\n";
+    cout << "4. Hydrogen\n";
+    cout << "Enter your choice (1-4): ";
+    cin >> choice;
+
+    if (choice < 1 || choice > 4) {
+        cout << "Invalid choice! Please choose a number between 1 and 4." << endl;
+        return 0;
+    }
+
+    cout << "Enter time (in seconds): ";
+    cin >> time;
+
+    if (time < 0 || time > 30) {
+        cout << "Error: Time must be between 0 and 30 seconds (inclusive)." << endl;
+        return 0;
+    }
+
+    if (choice == 1) {
+        distance = CARBON_DIOXIDE * time;
+        cout << fixed << setprecision(2);
+        cout << "The sound traveled " << distance << " meters in Carbon Dioxide." << endl;
+    }
+    else if (choice == 2) {
+        distance = AIR * time;
+        cout << fixed << setprecision(2);
+        cout << "The sound traveled " << distance << " meters in Air." << endl;
+    }
+    else if (choice == 3) {
+        distance = HELIUM * time;
+        cout << fixed << setprecision(2);
+        cout << "The sound traveled " << distance << " meters in Helium." << endl;
+    }
+    else if (choice == 4) {
+        distance = HYDROGEN * time;
+        cout << fixed << setprecision(2);
+        cout << "The sound traveled " << distance << " meters in Hydrogen." << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
